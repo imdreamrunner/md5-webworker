@@ -1,0 +1,16 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "node_modules/file-worker/src/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ],
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    "noImplicitAny": false,
+    "target": "es5",
+    "moduleResolution": "node",
+    "declaration": true
+  }
+}

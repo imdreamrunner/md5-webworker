@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>File MD5 Checker</title>
+</head>
+<body>
+
+<input type="file" id="file-input" />
+
+<pre id="result"></pre>
+
+<script src="../../dist/browser/md5-webworker.js"></script>
+
+<script>
+    document.getElementById("file-input").addEventListener("change", function(e) {
+        if (this.files.length > 0) {
+            var file = this.files[0];
+
+            md5_webworker(file).then(function(result) {
+                document.getElementById('result').innerHTML += "File: " + file.name + "\nMD5: " + result + '\n\n';
+            })
+        }
+    });
+</script>
+
+</body>
+</html>
