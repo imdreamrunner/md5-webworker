@@ -1,6 +1,6 @@
 {
   "name": "md5-webworker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/commonjs/src/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "file-worker": "0.0.10"
+    "file-worker": "0.0.12"
   },
   "repository": {
     "type": "git",

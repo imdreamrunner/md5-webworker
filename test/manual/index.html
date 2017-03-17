@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
     <title>File MD5 Checker</title>
@@ -8,7 +9,12 @@
 
 <pre id="result"></pre>
 
-<script src="../../dist/browser/md5-webworker.min.js"></script>
+<script>
+    // For IE
+    window.Promise || document.write('<script src="https://unpkg.com/es6-promise@3.2.1/dist/es6-promise.min.js"><\/script>');
+</script>
+
+<script src="../../dist/browser/md5-webworker.js"></script>
 
 <script>
     document.getElementById("file-input").addEventListener("change", function(e) {
