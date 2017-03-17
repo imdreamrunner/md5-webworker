@@ -1,15 +1,16 @@
 {
   "name": "md5-webworker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/commonjs/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/gulp test",
+    "build": "./node_modules/.bin/gulp build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "file-worker": "0.0.7"
+    "file-worker": "0.0.10"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,13 @@
     "gulp": "^3.9.1",
     "gulp-amdclean": "^1.1.1",
     "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-typescript": "^3.1.5",
+    "gulp-uglify": "^2.1.0",
     "gulp-webserver": "^0.9.1",
     "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-ie-launcher": "^1.0.0",

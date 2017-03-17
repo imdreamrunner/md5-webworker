@@ -7,6 +7,8 @@ const webserver = require("gulp-webserver");
 const replace = require('gulp-replace');
 const fs = require('fs');
 const concat =  require('gulp-concat');
+const uglify = require('gulp-uglify');
+const rename = require("gulp-rename");
 
 const sparkMd5 = fs.readFileSync('sparkMd5.js');
 
@@ -59,6 +61,16 @@ gulp.task("build-browser", ["build-browser-single"], function () {
     .pipe(gulp.dest("dist/browser"));
 });
 
+
+gulp.task("build-browser-minify", ["build-browser"], () => {
+  // Build library for browser.
+  return gulp
+    .src(["dist/browser/md5-webworker.js"])
+    .pipe(uglify())
+    .pipe(rename('md5-webworker.min.js'))
+    .pipe(gulp.dest("dist/browser"));
+});
+
 gulp.task('test', function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
@@ -83,6 +95,6 @@ gulp.task("webserver", () => {
   }));
 });
 
-gulp.task('build', ['build-commonjs', 'build-browser']);
+gulp.task('build', ['build-commonjs', 'build-browser', 'build-browser-minify']);
 
 gulp.task('default', ['build']);

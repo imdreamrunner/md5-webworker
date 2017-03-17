@@ -9,7 +9,7 @@ export default async function md5_webworker(file: File): Promise<string> {
     function processor(reader : FileWorkerReader, writer : FileWorkerWriter) {
         __SPARK_MD5__
         reader.onData = function (data) {
-            writer.write(SparkMD5.ArrayBuffer.hash(data));
+            writer.writeOnce(SparkMD5.ArrayBuffer.hash(data));
         };
         reader.readAll();
     }

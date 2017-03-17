@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '6'
+addons:
+  firefox: latest
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+script:
+- npm run build
+- npm test
+deploy:
+  provider: releases
+  api_key:
+    secure: 3S7uHIVgMLJyHl8Xekj9CeRGCFy90PBdsuio3BMWmjfPr3XZkmmxCXXcuFCBFS3ZzbS2sQrnHgcrOfvJ23K7/70Xe3u7SLUhnmtPtzS4XiDPyFp8ps4TKjwwGVKpgMtHjyNaQdzG//zfJ6ompsIZTlXi0jLcTu/+kWJqpTpn8b2ZSJ52lRTEgVyOZq6B6FEXPW/xkwzp/3WIt7AYR5u2Ek2yh5WOVL6rCpioziEJynUgwfkkei0MCbN+kp3d3Dpgn6pIHdISxZ/XmRVrV6ZoJBvjg4pGtN6j2lyFm7hJ/ZIz8QcCxNvGzB/zMGeQZbqQ+A2Bg+7g7KozhRk1JSGHiU3haDa9WOBM4Jh/PNmooU64RKfWvTQVpiBKUGED8q5+bu3p06mT4fL8jFKWnQbKbFwi20Nnx9i4QwU2jzp/kIOn95p1RGHizaYpvT8V+UplcbcmAfHmKEkr/0KobpKwukUXFhbsYhb7fBsoHmSTNK1pXUe9HAqi8PdBgbbp4WnbXIIlDamrdstGGO0ss6YEghmwaF8vaA60F1yHeNKHrDw7IG0r26YU09KrLxm3tkGoxL9cph+vtm4cR99IZ2184lDunhesiFPT8i+zwBfrXVex2m4IXXf7V4nN6e+7z37Vq7L4sUFonEyVw1nnYeiZiTCEwZ2ld6FU5wNrBlCyMWo=
+  file: dist/browser/*
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: imdreamrunner/md5-webworker
+    tags: true
