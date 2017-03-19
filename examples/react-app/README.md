@@ -1,0 +1,8 @@
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## How to run
+
+```
+yarn
+yarn start
+```
