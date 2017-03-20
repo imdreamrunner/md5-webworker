@@ -1,6 +1,8 @@
 MD5 WebWorker
 =============
 
+![MD5 WebWorker](misc/banner.png)
+
 **Compute MD5 of files in the background using web workers!**
 
 Web Worker is a browser technology that allow some JavaScript code
